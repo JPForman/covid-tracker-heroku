@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import StateCharts from './components/StateCharts/StateCharts';
 import CountryCharts from './components/CountryCharts/CountryCharts';
 import Navbar from './components/Navbar/Navbar';
-import { fetchData } from './api';
+import { fetchData, fetchStates } from './api';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import coronaImage from './images/image.png';
@@ -18,12 +18,15 @@ export default class App extends Component {
     this.state = {
       data: {},
       country: '',
+      stateData: {},
+      statePopulation: '',
+      stateName: '',
     }
   }
 
   async componentDidMount() {
     const fetchedData = await fetchData();
-
+    
     this.setState({ data: fetchedData });
   }
   

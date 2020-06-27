@@ -61,3 +61,27 @@ export const fetchPopulation = async () => {
     console.log(error);
   }
 }
+
+
+
+const stateURL = 'https://covidtracking.com/api/v1/states.json';
+
+export const fetchStates = async () => {
+  try {
+    const { data } = await axios.get(`${stateURL}`);
+
+    const modifiedData = data.map((data) => ({
+      death: data.death, 
+      stateName: data.state, 
+      total: data.total, 
+      totalTestResults: data.totalTestResults, 
+      totalTestResultsIncrease: data.totalTestResultsIncrease
+    })); 
+
+    console.log('fetchStates: ', modifiedData);
+    return modifiedData;
+
+  } catch (error) {
+    console.log(error)
+  }
+}
