@@ -4,12 +4,10 @@ const url = 'https://covid19.mathdro.id/api';
 
 export const fetchData = async (country) => {
   let changeableUrl = url;
-
+  fetchPopulation();
   if(country) {
     changeableUrl =`${url}/countries/${country}`
   }
-
-
 
   try{
     const { data: { confirmed, recovered, deaths, lastUpdate} } = await axios.get(changeableUrl);
@@ -44,6 +42,21 @@ export const fetchCountries = async () => {
     const { data: { countries }} = await axios.get(`${url}/countries`);
 
     return  countries.map((country) => country.name);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+
+const popURL = 'https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest'
+
+export const fetchPopulation = async () => {
+  try {
+    const { data } = await axios.get(`${popURL}`)
+
+    console.log('fetchPopulation data: ', data);
+    
   } catch (error) {
     console.log(error);
   }
