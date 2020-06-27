@@ -56,6 +56,7 @@ export const fetchPopulation = async () => {
     const { data } = await axios.get(`${popURL}`)
 
     console.log('fetchPopulation data: ', data);
+    return data;
     
   } catch (error) {
     console.log(error);

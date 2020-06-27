@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import StateScatter from '../StateScatter/StateScatter.js';
 
-export default function StateCharts() {
+export default function StateCharts({ allStateData }) {
   return (
     <div>
-      hi from them state charts
+      <StateScatter allStateData={allStateData} />
     </div>
   )
 }
