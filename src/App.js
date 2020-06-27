@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import CountryCharts from './components/CountryCharts/CountryCharts';
+import Navbar from './components/Navbar/Navbar';
 import { fetchData } from './api';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import coronaImage from './images/image.png';
 
@@ -34,10 +36,11 @@ export default class App extends Component {
     const { data, country } = this.state;
     return (
       <div className={styles.container}>
-        <img className={styles.image} src={coronaImage} alt='corona image'/>
-        <Router>
-          <Route path='/' render={() => <CountryCharts data={data} handleCountryChange={this.handleCountryChange} country={country} />}  />
-        </Router>
+          <Navbar />
+          <img className={styles.image} src={coronaImage} alt='corona image'/>
+        <Switch >
+          <Route path='/' exact render={() => <CountryCharts data={data} handleCountryChange={this.handleCountryChange} country={country} />}  />
+        </Switch>
       </div>
     )
   }
