@@ -74,7 +74,7 @@ export const fetchStates = async () => {
     const modifiedData = data.map((data) => ({
       death: data.death, 
       stateName: data.state, 
-      total: data.total, 
+      positive: data.positive, 
       totalTestResults: data.totalTestResults, 
       totalTestResultsIncrease: data.totalTestResultsIncrease
     })); 
