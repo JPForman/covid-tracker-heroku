@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Cards from './components/Cards/Cards';
 import Chart from './components/Chart/Chart';
 import CountryPicker from './components/CountryPicker/CountryPicker';
+import CountryCharts from './components/CountryCharts/CountryCharts';
 import { fetchData } from './api';
 
 import coronaImage from './images/image.png';
@@ -36,9 +38,9 @@ export default class App extends Component {
     return (
       <div className={styles.container}>
         <img className={styles.image} src={coronaImage} alt='corona image'/>
-        <Cards data={data} />
-        <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Chart data={data} country={country}/>
+        <Router>
+          <CountryCharts data={data} handleCountryChange={this.handleCountryChange} country={country} />
+        </Router>
       </div>
     )
   }
