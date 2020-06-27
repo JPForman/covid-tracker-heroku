@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Cards from './components/Cards/Cards';
-import Chart from './components/Chart/Chart';
-import CountryPicker from './components/CountryPicker/CountryPicker';
 import CountryCharts from './components/CountryCharts/CountryCharts';
 import { fetchData } from './api';
 
@@ -39,7 +36,7 @@ export default class App extends Component {
       <div className={styles.container}>
         <img className={styles.image} src={coronaImage} alt='corona image'/>
         <Router>
-          <CountryCharts data={data} handleCountryChange={this.handleCountryChange} country={country} />
+          <Route path='/' render={() => <CountryCharts data={data} handleCountryChange={this.handleCountryChange} country={country} />}  />
         </Router>
       </div>
     )
