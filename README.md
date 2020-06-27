@@ -1,51 +1,34 @@
-# _myForest_
+# _Covid-19 Tracker - React, Charts.js, Material UI, and API calls_
 
+![routes](./src/images/appScreenshot.png)
 
-#### _This is an application for tracking personal data in a visual way._
+#### _This is an application for displaying worldwide and individual country statistics regarding covid-19._
 
 #### By _**Josh Forman**_
 
 ## Description
 
-_This is an application for tracking personal data in a visual way. The user will be able to input data for any day and the forest will grow in relation._
+_This application allows the users to see worldwide line graph tracking infections, recoveries, and deaths. The user can also select individual countries to see their numbers as a bar graph._
 
+_https://github.com/JPForman/covid-tracker.git_
 
 ## Setup/Installation Requirements
 
-* _$ git clone https://github.com/JPForman/my-forest.git  
+* _$ git clone https://github.com/JPForman/covid-tracker.git_
 
-* _$ cd my-forest_
+* _$ cd covid-tracker_
 
 * _$ npm install_
 
 * _$ npm run start (browser will open to localhost:3000)_  
 
-or go to https://dry-forest-61437.herokuapp.com/#/ to view the site live
-
-## Components
-
-![components](./src/components/images/ComponentDiagram.png)
-
-made at https://www.draw.io/
 
 
+## Known Bugs
 
-
-## Specs
-
-* _The application allows the user to view, update, and create a forest based on date associated data input._
-
-## Known Bugs  
-_needs recall date functionality to update or delete events_
-_needs user auth and personalized data_
-_needs database for persistent data_
-_needs more scopes_
-_needs media query work_
-_needs major code refactoring_
-_needs more cute quirky buttons_
-_needs month and day views_
-_ultimately, this is a cute application, but it still needs a lot_
-
+_Readme Endpoints need updating_  
+_Needs Styling_
+_Some refactoring for cleaner code_  
 
 ## Support and contact details
 
@@ -53,7 +36,10 @@ _Any questions, comments or contributions please contact Josh Forman (cyborgform
 
 ## Technologies Used
 
-_React, Webpack, CSS_
+_React, Material UI, Charts.js, Axios, Countup_
+
+## Resources  
+ Special thanks to the tutorial at https://www.youtube.com/watch?v=khJlrj3Y6Ls&t=3s  
 
 ### License
 
