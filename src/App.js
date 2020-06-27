@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from "react-router-dom";
 
+import StateCharts from './components/StateCharts/StateCharts';
 import CountryCharts from './components/CountryCharts/CountryCharts';
 import Navbar from './components/Navbar/Navbar';
 import { fetchData } from './api';
@@ -39,7 +40,8 @@ export default class App extends Component {
           <Navbar />
           <img className={styles.image} src={coronaImage} alt='corona image'/>
         <Switch >
-          <Route path='/' exact render={() => <CountryCharts data={data} handleCountryChange={this.handleCountryChange} country={country} />}  />
+          <Route exact path='/' render={() => <CountryCharts data={data} handleCountryChange={this.handleCountryChange} country={country} />}  />
+          <Route path='/state' render={() => <StateCharts />} />
         </Switch>
       </div>
     )
